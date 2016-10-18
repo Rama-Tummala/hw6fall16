@@ -16,7 +16,9 @@ class Movie < ActiveRecord::Base
     # movie[:tmdb_id => "",:title =>"", :rating => "", :release_date => ""] =Tmdb::Movie.find(string)
       movie =Tmdb::Movie.find(title)
       movie.as_json
-      movie.as_json
+      puts movie
+     movie.as_json
+     
    rescue NoMethodError => tmdb_gem_exception
     if Tmdb::Api.response['code'] == '401'
         raise Movie::InvalidKeyError, 'Invalid API key'
