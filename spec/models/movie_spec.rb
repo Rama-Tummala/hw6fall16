@@ -15,4 +15,13 @@ describe Movie do
       end
     end
   end
+  
+  describe 'adding movie from Tmdb' do
+    context 'with valid key' do
+      it 'should add the movies from Tmdb' do
+        expect( Movie).to respond_to :create_from_tmdb
+       end
+     end
+   end
+    
 end

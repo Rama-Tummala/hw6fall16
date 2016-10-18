@@ -1,4 +1,5 @@
 require File.expand_path('../boot', __FILE__)
+#Tmdb:: Api.key ("f4702b08c0ac6ea5b51425788bb26562")
 
 require 'rails/all'
 

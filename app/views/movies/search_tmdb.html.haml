@@ -1,0 +1,22 @@
+
+
+%h1 The following movies containing '#{@search_term}' were found on tmdb database
+ 
+%table#movies
+ %thead
+  %tr
+   %th Movie Title
+   %th Rating
+   %th Release Date
+   %th Selected
+ %tbody
+ = form_tag movies_add_tmdb_path do
+  - @movies.each_with_index do |movie,movie_index|
+   %tr
+    %td= movie["title"]
+    %td= "R"
+    %td= movie["release_date"]
+    %td=check_box_tag "tmdb_movies[#{movie["id"]}]"
+  = submit_tag 'Add Selected Movies'
+=link_to 'Return to Movie List', movies_path
+
